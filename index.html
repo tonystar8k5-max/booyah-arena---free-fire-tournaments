@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>BOOYAH ARENA | Official eSports Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ff-orange: #ff4d01;
+            --ff-red: #c40000;
+            --bg-deep: #050505;
+        }
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--bg-deep);
+            color: #ffffff;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Hardware Accelerated Smoothness */
+        .smooth-view {
+            will-change: transform, opacity;
+            animation: view-in 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        @keyframes view-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: var(--ff-orange); border-radius: 10px; }
+
+        .ff-gradient {
+            background: linear-gradient(135deg, var(--ff-orange) 0%, var(--ff-red) 100%);
+        }
+        .ff-card {
+            background: linear-gradient(180deg, #151515 0%, #0d0d0d 100%);
+            border: 1px solid #222;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .ff-card:hover {
+            border-color: var(--ff-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(255, 77, 1, 0.2);
+        }
+        .italic-caps {
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        input, select {
+            background: #000 !important;
+            transition: border-color 0.2s ease;
+        }
+        .animate-booyah {
+            animation: booyah-pulse 1.5s infinite;
+        }
+        @keyframes booyah-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 77, 1, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 77, 1, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 77, 1, 0); }
+        }
+        /* Fix for iOS bottom bar issues */
+        .safe-pb { padding-bottom: env(safe-area-inset-bottom); }
+        
+        /* Eliminate Mobile Lag */
+        * { touch-action: manipulation; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
